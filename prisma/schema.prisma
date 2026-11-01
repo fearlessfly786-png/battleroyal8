@@ -1,0 +1,14 @@
+// RATFIRE (minimal build) — SQLite schema.
+// All persisted feature databases (AI-forged costumes, weapon textures,
+// mods and equipment state) were removed together with their features.
+// The datasource is kept so `prisma db push` and the GitHub export
+// (which ships the prisma/ folder) keep working.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
